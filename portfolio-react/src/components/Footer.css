@@ -1,0 +1,116 @@
+.footer {
+  position: relative;
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border);
+  padding: 80px 0 48px;
+  overflow: hidden;
+}
+
+.footer__glow {
+  position: absolute;
+  bottom: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 300px;
+  background: radial-gradient(ellipse, rgba(139, 92, 246, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.footer__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 36px;
+  text-align: center;
+}
+
+/* Logo */
+.footer__logo {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.footer__logo-bracket {
+  color: var(--accent);
+}
+
+.footer__tagline {
+  margin-top: 8px;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+/* Divider */
+.footer__divider {
+  width: 100%;
+  max-width: 480px;
+  height: 1px;
+  background: var(--border);
+}
+
+/* Contact links */
+.footer__contacts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.footer__contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.footer__contact-link:hover {
+  color: var(--accent-light);
+  border-color: var(--border-hover);
+  background: rgba(139, 92, 246, 0.06);
+  transform: translateY(-2px);
+}
+
+.footer__contact-link svg {
+  flex-shrink: 0;
+}
+
+/* Copyright */
+.footer__copy {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer__heart {
+  color: #f87171;
+  flex-shrink: 0;
+}
+
+@media (max-width: 480px) {
+  .footer__contacts {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .footer__contact-link {
+    width: 100%;
+    justify-content: center;
+    max-width: 300px;
+  }
+}

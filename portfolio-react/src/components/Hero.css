@@ -1,0 +1,167 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 120px 0 80px;
+}
+
+/* Orbs decorativos */
+.hero__orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+}
+
+.hero__orb--1 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.18) 0%, transparent 70%);
+  top: -100px;
+  left: -100px;
+}
+
+.hero__orb--2 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.12) 0%, transparent 70%);
+  bottom: -80px;
+  right: -80px;
+}
+
+/* Content */
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  max-width: 700px;
+}
+
+/* Chip disponível */
+.hero__available {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: 50px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #34d399;
+  letter-spacing: 0.3px;
+}
+
+.hero__available-dot {
+  width: 8px;
+  height: 8px;
+  background: #10b981;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #10b981;
+  animation: pulse-dot 2s ease infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(0.85); }
+}
+
+/* Nome */
+.hero__name {
+  font-size: clamp(2.8rem, 7vw, 5rem);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -2px;
+  color: var(--text-primary);
+}
+
+/* Typing effect */
+.hero__role {
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  font-weight: 500;
+  color: var(--accent-light);
+  font-family: 'JetBrains Mono', monospace;
+  min-height: 2em;
+}
+
+.hero__cursor {
+  display: inline-block;
+  animation: blink 1s step-start infinite;
+  color: var(--accent);
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Descrição */
+.hero__desc {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 560px;
+}
+
+.hero__desc strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Botões */
+.hero__btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+/* Scroll hint */
+.hero__scroll {
+  color: var(--text-muted);
+  margin-top: 24px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .hero {
+    padding: 100px 0 60px;
+  }
+
+  .hero__content {
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero__name {
+    letter-spacing: -1px;
+  }
+
+  .hero__btns {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .hero__btns .btn {
+    flex: 1;
+    min-width: 140px;
+    justify-content: center;
+  }
+
+  .hero__orb--1 {
+    width: 300px;
+    height: 300px;
+    top: -60px;
+    left: -80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__btns .btn {
+    flex: 1 1 100%;
+  }
+}

@@ -1,0 +1,191 @@
+/* ===== GLOBAL CSS — Design System ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg-main: #050816;
+  --bg-secondary: #0d1224;
+  --bg-card: #111827;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-muted: #475569;
+  --accent: #8b5cf6;
+  --accent-light: #a78bfa;
+  --accent-hover: #7c3aed;
+  --accent-glow: rgba(139, 92, 246, 0.3);
+  --accent2: #3b82f6;
+  --accent2-glow: rgba(59, 130, 246, 0.2);
+  --success: #10b981;
+  --border: rgba(255, 255, 255, 0.06);
+  --border-hover: rgba(139, 92, 246, 0.4);
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.4);
+  --shadow-glow: 0 0 30px rgba(139, 92, 246, 0.15);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-main); }
+::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; }
+
+/* Selection color */
+::selection {
+  background: var(--accent);
+  color: white;
+}
+
+/* Background com efeito de partículas */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(139, 92, 246, 0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 100%, rgba(59, 130, 246, 0.08) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== TYPOGRAPHY ===== */
+.gradient-text {
+  background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent2) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+  display: block;
+}
+
+.section-title {
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  max-width: 560px;
+  line-height: 1.7;
+}
+
+.section-header {
+  margin-bottom: 56px;
+}
+
+/* ===== BADGE ===== */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  border-radius: 50px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.badge-purple {
+  background: rgba(139, 92, 246, 0.15);
+  color: var(--accent-light);
+  border: 1px solid rgba(139, 92, 246, 0.25);
+}
+
+.badge-green {
+  background: rgba(16, 185, 129, 0.12);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 28px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-hover) 100%);
+  color: white;
+  box-shadow: 0 4px 20px var(--accent-glow);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px var(--accent-glow);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1.5px solid var(--border-hover);
+}
+
+.btn-secondary:hover {
+  background: rgba(139, 92, 246, 0.08);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+/* ===== SECTIONS ===== */
+section {
+  padding: 100px 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== DIVIDER ===== */
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border), transparent);
+  margin: 0;
+}
