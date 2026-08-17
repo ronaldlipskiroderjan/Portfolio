@@ -1,33 +1,33 @@
-import { motion } from 'framer-motion'
+import { motion as Motion } from 'framer-motion'
 import { CheckCircle } from 'lucide-react'
 import './Skills.css'
 
 const hardSkills = [
-  { name: 'Java', emoji: '☕', color: '#ff0000' },
-  { name: 'Golang', emoji: '🐹', color: '#00ddff' },
-  { name: 'Python', emoji: '🐍', color: '#00ffbb' },
-  { name: 'Spring Boot', emoji: '🍃', color: '#22c55e' },
-  { name: 'Spring Security', emoji: '🔒', color: '#22c55e' },
-  { name: 'Spring Data JPA', emoji: '🗄️', color: '#22c55e' },
-  { name: 'API REST', emoji: '🔗', color: '#aac522' },
-  { name: 'JUnit', emoji: '🧪', color: '#f62303' },
-  { name: 'SQL -> (PostgreSQL & MySQL)', emoji: '🐘', color: '#60a5fa' },
-  { name: 'Git & GitHub', emoji: '🔧', color: '#7176f8' },
-  { name: 'Redes', emoji: '🌐', color: '#7176f8' },
-  { name: 'Linux', emoji: '🐧', color: '#1136a6' },
-  { name: 'Modelagem de Software', emoji: '🧩 ', color: '#0ded0d' },
-  { name: 'Desing de Sistemas', emoji: '📐 ', color: '#0ded0d' },
+  { name: "Java", emoji: "☕", color: "#60a5fa" },
+  { name: "Spring Boot", emoji: "🍃", color: "#3b82f6" },
+  { name: "Spring Security", emoji: "🔒", color: "#3b82f6" },
+  { name: "Spring Data JPA", emoji: "🗄️", color: "#3b82f6" },
+  { name: "APIs REST", emoji: "🔗", color: "#2563eb" },
+  { name: "JUnit", emoji: "🧪", color: "#818cf8" },
+  { name: "PostgreSQL & MySQL", emoji: "🐘", color: "#60a5fa" },
+  { name: "Go", emoji: "🐹", color: "#38bdf8" },
+  { name: "Python", emoji: "🐍", color: "#22d3ee" },
+  { name: "Git & GitHub", emoji: "🔧", color: "#7176f8" },
+  { name: "Linux", emoji: "🐧", color: "#1136a6" },
+  { name: "Modelagem de Software", emoji: "🧩", color: "#06b6d4" },
+  { name: "Design de Sistemas", emoji: "📐", color: "#06b6d4" },
+  { name: "Redes", emoji: "🌐", color: "#7176f8" },
 ]
 
-const courses = [ 
-  'Maratona Java Virado no Jiraya -> Curso de Java',
-  'Curso de Spring Boot, Spring Security e Spring Data JPA (Souza DEV)',
-  'Trilha de Analista de Requisitos',
-  'Trilha de Desenvolvedor de Sistemas Computacionais',
-  'Trilha de Desenvolvedor Web',
-  'Arquitetura de Banco de Dados',
-  'Inglês (Cultura Inglesa)',
-  'Fundamentos da IA Moderna (DIO)'
+const courses = [
+  "Maratona Java Virado no Jiraya — Curso de Java",
+  "Spring Boot, Spring Security e Spring Data JPA — Souza DEV",
+  "Trilha de Analista de Requisitos",
+  "Trilha de Desenvolvedor de Sistemas Computacionais",
+  "Trilha de Desenvolvedor Web",
+  "Arquitetura de Banco de Dados",
+  "Inglês — Cultura Inglesa",
+  "Fundamentos da IA Moderna — DIO",
 ]
 
 const fadeUp = {
@@ -43,24 +43,24 @@ export default function Skills() {
   return (
     <section id="skills">
       <div className="container">
-        <motion.div
+        <Motion.div
           className="section-header"
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
-          <span className="section-label">💡 Conhecimento</span>
+          <span className="section-label">03 · conhecimento</span>
           <h2 className="section-title">Habilidades & Cursos</h2>
           <p className="section-subtitle">
-            Tecnologias que domino e trilhas de aprendizado que percorri.
+            Tecnologias que aplico nos projetos e formações que sustentam minha evolução como desenvolvedor.
           </p>
-        </motion.div>
+        </Motion.div>
 
         <div className="skills-grid">
           {/* Hard Skills */}
           <div>
-            <motion.h3
+            <Motion.h3
               className="skills-col-title"
               variants={fadeUp}
               initial="hidden"
@@ -68,10 +68,10 @@ export default function Skills() {
               viewport={{ once: true }}
             >
               Habilidades Técnicas
-            </motion.h3>
+            </Motion.h3>
             <div className="chips-container">
               {hardSkills.map((skill, i) => (
-                <motion.span
+                <Motion.span
                   key={skill.name}
                   className="skill-chip"
                   style={{ '--chip-color': skill.color }}
@@ -84,14 +84,14 @@ export default function Skills() {
                 >
                   <span className="skill-chip__emoji">{skill.emoji}</span>
                   {skill.name}
-                </motion.span>
+                </Motion.span>
               ))}
             </div>
           </div>
 
           {/* Cursos */}
           <div>
-            <motion.h3
+            <Motion.h3
               className="skills-col-title"
               variants={fadeUp}
               initial="hidden"
@@ -99,10 +99,10 @@ export default function Skills() {
               viewport={{ once: true }}
             >
               Cursos Extras
-            </motion.h3>
+            </Motion.h3>
             <ul className="courses-list">
               {courses.map((course, i) => (
-                <motion.li
+                <Motion.li
                   key={course}
                   className="course-item"
                   variants={fadeUp}
@@ -113,7 +113,7 @@ export default function Skills() {
                 >
                   <CheckCircle size={16} className="course-item__icon" />
                   <span>{course}</span>
-                </motion.li>
+                </Motion.li>
               ))}
             </ul>
           </div>

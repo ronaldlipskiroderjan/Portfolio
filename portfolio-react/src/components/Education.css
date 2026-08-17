@@ -1,11 +1,23 @@
 .education-card {
   position: relative;
-  background: var(--bg-card);
+  overflow: hidden;
+  background:
+    linear-gradient(115deg, rgba(59, 130, 246, 0.06), transparent 38%),
+    var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  overflow: hidden;
-  transition: all 0.3s ease;
   box-shadow: var(--shadow-card);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-card::before {
+  content: "Education.java";
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  color: rgba(148, 180, 225, 0.2);
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
 }
 
 .education-card:hover {
@@ -13,99 +25,85 @@
   box-shadow: var(--shadow-glow), var(--shadow-card);
 }
 
-/* Linha de accent esquerda */
 .education-card__accent {
   position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
+  inset: 0 auto 0 0;
   width: 4px;
-  background: linear-gradient(180deg, var(--accent) 0%, var(--accent2) 100%);
+  background: linear-gradient(180deg, var(--accent) 0 68%, var(--accent2) 68% 100%);
 }
 
 .education-card__body {
   display: flex;
-  gap: 24px;
-  padding: 36px 36px 36px 48px;
   align-items: flex-start;
+  gap: 25px;
+  padding: 42px 42px 42px 48px;
 }
 
 .education-card__icon {
+  width: 58px;
+  height: 58px;
+  min-width: 58px;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 56px;
-  height: 56px;
-  min-width: 56px;
-  background: rgba(139, 92, 246, 0.12);
-  border: 1px solid rgba(139, 92, 246, 0.2);
-  border-radius: var(--radius-md);
-  color: var(--accent);
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  border-radius: 14px 14px 14px 4px;
+  color: var(--accent-light);
+  background: rgba(59, 130, 246, 0.09);
 }
 
 .education-card__info {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 20px;
 }
 
 .education-card__top {
   display: flex;
-  justify-content: space-between;
   align-items: flex-start;
-  gap: 16px;
+  justify-content: space-between;
+  gap: 22px;
   flex-wrap: wrap;
 }
 
 .education-card__degree {
-  font-size: 1.25rem;
-  font-weight: 700;
+  max-width: 650px;
+  margin-bottom: 7px;
   color: var(--text-primary);
-  margin-bottom: 6px;
-  line-height: 1.3;
+  font-size: 1.25rem;
+  font-weight: 750;
+  line-height: 1.35;
 }
 
 .education-card__institution {
-  font-size: 0.95rem;
   color: var(--text-secondary);
+  font-size: 0.92rem;
   font-weight: 500;
 }
 
 .education-card__meta {
   display: flex;
-  gap: 24px;
   flex-wrap: wrap;
+  gap: 12px 24px;
+  padding-top: 17px;
+  border-top: 1px solid var(--border);
 }
 
 .education-meta-item {
   display: flex;
   align-items: center;
-  gap: 6px;
-  font-size: 0.85rem;
+  gap: 7px;
   color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
   font-weight: 500;
 }
 
-.education-meta-item svg {
-  color: var(--accent);
-  flex-shrink: 0;
-}
+.education-meta-item svg { color: var(--accent2-light); flex-shrink: 0; }
 
-@media (max-width: 640px) {
-  .education-card__body {
-    flex-direction: column;
-    padding: 28px 24px 28px 36px;
-    gap: 16px;
-  }
-
-  .education-card__top {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .education-card__meta {
-    flex-direction: column;
-    gap: 10px;
-  }
+@media (max-width: 680px) {
+  .education-card__body { flex-direction: column; padding: 38px 25px 30px 32px; }
+  .education-card__top { flex-direction: column; }
+  .education-card__meta { flex-direction: column; gap: 11px; }
 }

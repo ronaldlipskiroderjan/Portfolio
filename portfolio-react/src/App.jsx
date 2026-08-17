@@ -13,11 +13,11 @@ function App() {
       <main>
         <Hero />
         <div className="divider" />
-        <Education />
+        <Projects />
         <div className="divider" />
         <Skills />
         <div className="divider" />
-        <Projects />
+        <Education />
       </main>
       <Footer />
     </>

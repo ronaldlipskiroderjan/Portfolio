@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion as Motion } from 'framer-motion'
 import { GraduationCap, CalendarDays, MapPin } from 'lucide-react'
 import './Education.css'
 
@@ -15,18 +15,18 @@ export default function Education() {
   return (
     <section id="formacao">
       <div className="container">
-        <motion.div
+        <Motion.div
           className="section-header"
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
-          <span className="section-label">🎓 Trajetória</span>
+          <span className="section-label">04 · trajetória</span>
           <h2 className="section-title">Formação Acadêmica</h2>
-        </motion.div>
+        </Motion.div>
 
-        <motion.div
+        <Motion.div
           className="education-card"
           variants={fadeUp}
           initial="hidden"
@@ -66,7 +66,7 @@ export default function Education() {
               </div>
             </div>
           </div>
-        </motion.div>
+        </Motion.div>
       </div>
     </section>
   )

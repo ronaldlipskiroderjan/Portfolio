@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion as Motion } from 'framer-motion'
 import { Mail, Phone, Linkedin, Github } from 'lucide-react'
 import './Footer.css'
 
@@ -30,7 +30,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer__glow" />
       <div className="container">
-        <motion.div
+        <Motion.div
           className="footer__inner"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -40,9 +40,9 @@ export default function Footer() {
           {/* Logo e tagline */}
           <div className="footer__brand">
             <span className="footer__logo">
-              <span className="footer__logo-bracket">&lt;</span>
-              Ronald
-              <span className="footer__logo-bracket">/&gt;</span>
+              <span className="footer__logo-bracket">{"{"}</span>
+              Ronald<span className="footer__logo-ext">.java</span>
+              <span className="footer__logo-bracket">{"}"}</span>
             </span>
             <p className="footer__tagline">
               Estudante de Engenharia de Software · Curitiba, PR
@@ -73,7 +73,7 @@ export default function Footer() {
           <p className="footer__copy">
             © 2026 Ronald Lipski Roderjan
           </p>
-        </motion.div>
+        </Motion.div>
       </div>
     </footer>
   )

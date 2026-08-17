@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion as Motion } from 'framer-motion'
 import { Github, ExternalLink, Clock, CheckCircle2 } from 'lucide-react'
 import './Projects.css'
 
@@ -12,10 +12,15 @@ const projects = [
     description:
       'API REST para e-commerce que reúne autenticação e autorização com JWT, cadastro de usuários e a modelagem completa de produtos, categorias, pedidos, pagamentos, endereços, fretes e transportadoras.',
     highlights: [
-      { emoji: '☕', label: 'Java 21 & Spring Boot' },
+      { emoji: '☕', label: 'Java & Spring Boot' },
       { emoji: '🔐', label: 'Spring Security & JWT' },
       { emoji: '🐘', label: 'PostgreSQL' },
       { emoji: '🍃', label: 'Spring Data JPA' },
+    ],
+    strengths: [
+      'Autenticação JWT com senhas protegidas por BCrypt',
+      'Modelagem de domínio para um fluxo completo de e-commerce',
+      'Validação de entrada e tratamento global de exceções',
     ],
     github: 'https://github.com/ronaldlipskiroderjan/E-Commerce-ZENK',
     demo: null,
@@ -24,8 +29,8 @@ const projects = [
     id: 'kart-finance',
     emoji: '🏎️',
     title: 'Kart Finance',
-    status: 'Em Desenvolvimento',
-    statusType: 'wip',
+    status: 'Concluído',
+    statusType: 'done',
     description:
       'Aplicação full stack de gestão financeira para equipes de kart, com controle de pilotos, despesas, reembolsos, fechamentos mensais, cobranças de corridas e caixa de viagem.',
     highlights: [
@@ -33,6 +38,11 @@ const projects = [
       { emoji: '⚛️', label: 'React & Vite' },
       { emoji: '🐘', label: 'PostgreSQL' },
       { emoji: '🛡️', label: 'Sessão HttpOnly & CSRF' },
+    ],
+    strengths: [
+      'Arquitetura full stack com backend modular em Go',
+      'Regras financeiras com valores monetários em centavos',
+      'Autenticação por sessão HttpOnly e proteção CSRF',
     ],
     github: 'https://github.com/ronaldlipskiroderjan/Kart-Finance',
     demo: null,
@@ -52,23 +62,23 @@ export default function Projects() {
   return (
     <section id="projetos">
       <div className="container">
-        <motion.div
+        <Motion.div
           className="section-header"
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
         >
-          <span className="section-label">🚀 Portfólio</span>
-          <h2 className="section-title">Projetos em Destaque</h2>
+          <span className="section-label">02 · portfólio</span>
+          <h2 className="section-title">Projetos que mostram a prática</h2>
           <p className="section-subtitle">
-            Projetos que desenvolvi para consolidar meus conhecimentos técnicos e resolver problemas reais.
+            Dois sistemas em evolução que mostram como aplico arquitetura, segurança e regras de negócio em contextos reais.
           </p>
-        </motion.div>
+        </Motion.div>
 
         <div className="projects-grid">
           {projects.map((project, i) => (
-            <motion.div
+            <Motion.div
               key={project.id}
               className="project-card"
               variants={fadeUp}
@@ -97,6 +107,15 @@ export default function Projects() {
 
               {/* Descrição */}
               <p className="project-card__desc">{project.description}</p>
+
+              <div className="project-card__proof">
+                <p className="project-card__proof-label">O que demonstra</p>
+                <ul>
+                  {project.strengths.map((strength) => (
+                    <li key={strength}>{strength}</li>
+                  ))}
+                </ul>
+              </div>
 
               {/* Highlights */}
               <div className="project-card__highlights">
@@ -134,7 +153,7 @@ export default function Projects() {
                   </a>
                 )}
               </div>
-            </motion.div>
+            </Motion.div>
           ))}
         </div>
       </div>
